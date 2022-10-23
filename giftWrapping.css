@@ -1,0 +1,120 @@
+@font-face {
+    font-family: "Christmas Chimney";
+    src: url('res/fonts/ChristmasChimney/ChristmasChimney.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Grinched";
+    src: url('res/fonts/Grinched/Grinched2.0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Shielfie Christmas";
+    src: url('res/fonts/Shielfie/ShielfieChristmas.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Shielfie";
+    src: url('res/fonts/Shielfie/Shielfie.ttf') format('truetype');
+}
+
+:root {
+    --MaxRed: #DD1C1A;
+    --DPasGreen: #4CB944;
+    --HunterGreen: #2E5339;
+    --MiddleGreen: #008000;
+    --AntWhite: #FFEEDB;
+    --Gold: #C9A227;
+}
+
+
+html, body {
+    font-family: sans-serif;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--AntWhite);
+}
+
+h1 {    
+    text-align: center;
+    font-size: 125px;
+    margin: 15px 0px;
+    padding-bottom: 25px;
+}
+
+.titles {
+    display: grid;
+}
+ 
+.title1, .title2 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.title1 {
+    color: var(--MiddleGreen);
+    font-family: 'Shielfie Christmas';
+}
+
+.title2 {
+    color: var(--MaxRed);
+    font-family: 'Shielfie';
+}
+
+hr {
+    border: 0;
+    height: 5px;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    background-image: linear-gradient(to right, transparent, var(--Gold), transparent);  
+      
+}
+
+.gallery {
+    display: flex;
+    padding: 2px;
+    transition: 0.3s;
+}
+.gallery:hover .gallery__image {
+    filter: grayscale(1);
+}
+.gallery__column {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+.gallery__link {
+    margin: 2px;
+    overflow: hidden;
+}
+.gallery__link:hover .gallery__image {
+    filter: grayscale(0);
+}
+.gallery__link:hover .gallery__caption {
+    opacity: 1;
+}
+.gallery__thumb {
+    position: relative;
+}
+.gallery__image {
+    display: block;
+    width: 100%;
+    transition: 0.3s;
+}
+.gallery__image:hover {
+    transform: scale(1.1);
+}
+.gallery__caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 25px 15px 15px;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    color: white;
+    opacity: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, .5) 0%, rgba(255, 255, 255, 0) 100%);
+    transition: 0.3s;
+}
