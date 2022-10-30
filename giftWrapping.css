@@ -39,6 +39,23 @@ h1 {
     padding-bottom: 25px;
 }
 
+h2 {
+    text-align: center;
+    font-size: 100px;
+    margin: 15px 0px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    color: var(--MiddleGreen);
+    font-family: 'Shielfie';
+}
+
+h3 {
+    text-align: center;
+    font-size: 50px;
+    color: var(--MaxRed);
+    font-family: 'Shielfie';
+}
+
 .titles {
     display: grid;
 }
@@ -63,54 +80,37 @@ hr {
     height: 5px;
     margin-top: 10px;
     margin-bottom: 50px;
-    background-image: linear-gradient(to right, transparent, var(--Gold), transparent);  
-      
+    background-image: linear-gradient(to right, transparent, var(--Gold), transparent);    
 }
 
 .gallery {
-    display: flex;
-    padding: 2px;
-    transition: 0.3s;
+    line-height: 0;
+    -webkit-column-count: 3; /* split it into 5 columns */
+    -webkit-column-gap: 5px; /* give it a 5px gap between columns */
+    -moz-column-count: 3;
+    -moz-column-gap: 5px;
+    column-count: 3;
+    column-gap: 5px;
 }
-.gallery:hover .gallery__image {
-    filter: saturate(100%);
+
+.gallery img {
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom: 5px; /* to match column gap */
 }
-.gallery__column {
-    display: flex;
-    flex-direction: column;
-    width: 25%;
+
+@media (max-width: 800px) {
+    .gallery {
+        -moz-column-count:    2;
+        -webkit-column-count: 2;
+        column-count:         2;
+    }
 }
-.gallery__link {
-    margin: 2px;
-    overflow: hidden;
-}
-.gallery__link:hover .gallery__image {
-    filter: saturate(140%);
-}
-/* .gallery__link:hover .gallery__caption {
-    opacity: 1;
-} */
-.gallery__thumb {
-    position: relative;
-}
-.gallery__image {
-    display: block;
-    width: 100%;
-    transition: 0.3s;
-}
-.gallery__image:hover {
-    transform: scale(1.2);
-}
-.gallery__caption {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 25px 15px 15px;
-    width: 100%;
-    font-family: 'Raleway', sans-serif;
-    font-size: 16px;
-    color: white;
-    opacity: 0;
-    background: linear-gradient(0deg, rgba(0, 0, 0, .5) 0%, rgba(255, 255, 255, 0) 100%);
-    transition: 0.3s;
+
+@media (max-width: 400px) {
+    .gallery {
+        -moz-column-count:    1;
+        -webkit-column-count: 1;
+        column-count:         1;
+    }
 }
