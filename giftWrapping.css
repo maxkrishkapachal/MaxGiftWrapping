@@ -97,6 +97,7 @@ hr {
     width: 100% !important;
     height: auto !important;
     margin-bottom: 5px; /* to match column gap */
+    filter: saturate(1.2)
 }
 
 @media (max-width: 800px) {
